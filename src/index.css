@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --navy:       #08152e;
+  --navy-mid:   #0e2048;
+  --royal:      #1739a0;
+  --royal-light:#2650cc;
+  --gold:       #c4880a;
+  --gold-light: #f0b22a;
+  --gold-pale:  #fef9ec;
+  --cream:      #f7f8fc;
+  --slate:      #4b607d;
+  --border:     #d5dff0;
+  --bg:         #f4f6fb;
+
+  font-family: 'Outfit', sans-serif;
+  color: var(--navy);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1739a055; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1739a099; }
+
+.fd { font-family: 'Playfair Display', serif; }
+.fm { font-family: 'JetBrains Mono', monospace; }
+
+@keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes ticker   { from { transform:translateX(100%); } to { transform:translateX(-100%); } }
+@keyframes pulsegold { 0%,100% { box-shadow:0 0 0 0 rgba(196,136,10,.45); } 60% { box-shadow:0 0 0 14px rgba(196,136,10,0); } }
+@keyframes spin     { to { transform:rotate(360deg); } }
+@keyframes shimmer  { 0% { background-position:-200% 0; } 100% { background-position:200% 0; } }
+
+.anim-up   { animation: fadeUp  .55s ease both; }
+.anim-in   { animation: fadeIn  .4s  ease both; }
+.gold-ring { animation: pulsegold 2.2s ease-in-out infinite; }
+
+.ticker-wrap { overflow:hidden; white-space:nowrap; }
+.ticker      { display:inline-block; animation: ticker 30s linear infinite; }
+
+.glass {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.15);
+}
+.glass-dark {
+  background: rgba(8,21,46,.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.08);
+}
